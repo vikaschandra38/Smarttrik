@@ -1,0 +1,25 @@
+<div class="overview">
+    <h1>Overview</h1>
+</div>
+<form>
+    <div class="my-control">
+        <mat-form-field>
+            <mat-label>Select Station</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="food">
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="my-control">
+        <mat-form-field>
+            <mat-label>Select Device</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="food">
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</form>

@@ -1,0 +1,54 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+    <mat-toolbar  class="example-toolbar" id="my-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon class="menu-icon">menu</mat-icon></button>
+      <h1 class="example-app-name">{{getTitle()}}</h1>
+      <div class="logo-img">
+      </div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon class="menu-icon">more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="top-menu">
+          <mat-icon color="primary">person_outline</mat-icon>
+          <span>Account</span>
+        </button>
+        <button mat-menu-item class="top-menu" (click)="logout()">
+          <mat-icon color="primary">exit_to_app</mat-icon>
+          <span>Log Out</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav [opened]="isOpened" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" id="side-nav">
+       <div class="main-con">
+        <div class="user-pf">
+          <div class="user-profile">
+            <div class="profile-img">
+
+            </div>
+            <p><span class="my-text">Hi, </span>{{user.username}}</p>
+          </div>
+          <a routerLink = ""  mat-raised-button color="primary" class="my-btn" >Dashboard</a>
+          <a routerLink = "/substation"  mat-raised-button color="primary" class="my-btn" >Sub Stations</a>
+          <a routerLink = "/streetlight"  mat-raised-button color="primary" class="my-btn" >Street Lights</a>
+        </div>
+        
+        <div class="log-out">
+                  <a (click)="logout()"  mat-raised-button color="accent" class="my-btn"><span class="material-icons logout-icon">
+exit_to_app
+</span>Log Out</a>
+        </div>
+ </div>
+      </mat-sidenav>
+  
+      <mat-sidenav-content class="my-scrollbar">
+<router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+
+  
