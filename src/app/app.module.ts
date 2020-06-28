@@ -18,6 +18,8 @@ import { LoaderIntercepterService } from './interceptors/loader-intercepter.serv
 import { SubstationUser1Component } from './components/substation-user1/substation-user1.component';
 import { StreetlightUser1Component } from './components/streetlight-user1/streetlight-user1.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AccountComponent } from './components/account/account.component';
+
 const material = [
   MatInputModule,
   MatButtonModule,
@@ -36,7 +38,8 @@ const material = [
     LayoutComponent,
     SubstationUser1Component,
     StreetlightUser1Component,
-    WelcomeComponent
+    WelcomeComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

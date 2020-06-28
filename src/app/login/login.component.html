@@ -15,21 +15,23 @@
         </div>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="login-control">
+                      <mat-icon  aria-hidden="false" [class.color-icon]="isFocus" aria-label="Example home icon">account_box</mat-icon>
+
             <mat-form-field class="example-full-width">
                 <mat-label class="my-invalid">Enter UserName</mat-label>
-                <input matInput formControlName="username"  (focus)="this.isFocus=true;" (blur)="!this.isFocus=false;" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                <input matInput formControlName="username" required (focus)="this.isFocus=true;" (blur)="!this.isFocus=false;" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
               </mat-form-field>
-              <mat-icon  aria-hidden="false" [class.color-icon]="isFocus" aria-label="Example home icon">account_box</mat-icon>
               <div *ngIf="submitted && f.username.errors" class="invalid-feedback error-msg">
                 <div *ngIf="f.username.errors.required">*Username is required</div>
             </div>
         </div>
         <div class="login-control">
+                    <mat-icon  aria-hidden="false" [class.color-icon]="isFocuss" aria-label="Example home icon">https</mat-icon>
+
             <mat-form-field class="example-full-width">
                 <mat-label class="my-invalid">Enter Password</mat-label>
-                <input matInput type="password" formControlName="password" (focus)="this.isFocuss=true;" (blur)="this.isFocuss=false;" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+                <input matInput type="password" required formControlName="password" (focus)="this.isFocuss=true;" (blur)="this.isFocuss=false;" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
             </mat-form-field>
-            <mat-icon  aria-hidden="false" [class.color-icon]="isFocuss" aria-label="Example home icon">https</mat-icon>
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback error-msg">
                 <div *ngIf="f.password.errors.required">*Password is required</div>
             </div>

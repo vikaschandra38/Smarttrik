@@ -4,14 +4,32 @@
       <h1 class="example-app-name">{{getTitle()}}</h1>
       <div class="logo-img">
       </div>
+      <div class="search-box">
+        <mat-icon class="search-icon">search
+        </mat-icon>
+        <input type="search" placeholder="Search....">
+      </div>
+      <button class="msg-btn" mat-icon-button [matMenuTriggerFor]="menuu" aria-label="Example icon-button with a menu">
+        <mat-icon class="menu-icon menu-iconn">notifications
+</mat-icon>
+      </button>
+          <mat-menu #menuu="matMenu">
+      <mat-list role="list">
+  <mat-list-item role="listitem"> <mat-icon class="menu-icon menu-iconn menu-iconnn">done</mat-icon>Check your mail</mat-list-item>
+  <mat-list-item role="listitem"> <mat-icon class="menu-icon menu-iconn menu-iconnn">done</mat-icon>Change your password to continue</mat-list-item>
+  <mat-list-item role="listitem"> <mat-icon class="menu-icon menu-iconn menu-iconnn">done</mat-icon>You got a message message
+    
+  </mat-list-item>
+      </mat-list>
+      </mat-menu>
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon class="menu-icon">more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item class="top-menu">
+        <a mat-menu-item class="top-menu" routerLink = "/account">
           <mat-icon color="primary">person_outline</mat-icon>
           <span>Account</span>
-        </button>
+        </a>
         <button mat-menu-item class="top-menu" (click)="logout()">
           <mat-icon color="primary">exit_to_app</mat-icon>
           <span>Log Out</span>
@@ -27,13 +45,18 @@
         <div class="user-pf">
           <div class="user-profile">
             <div class="profile-img">
-
             </div>
             <p><span class="my-text">Hi, </span>{{user.username}}</p>
           </div>
-          <a routerLink = ""  mat-raised-button color="primary" class="my-btn" >Dashboard</a>
-          <a routerLink = "/substation"  mat-raised-button color="primary" class="my-btn" >Sub Stations</a>
-          <a routerLink = "/streetlight"  mat-raised-button color="primary" class="my-btn" >Street Lights</a>
+          <div class="my-link">
+            <a routerLink = "" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" mat-raised-button color="primary" class="my-btn" >Dashboard  </a><mat-icon class="link-icon">chevron_right</mat-icon>
+          </div>  
+          <div class="my-link">
+<a routerLink = "/substation"  routerLinkActive="active-link" mat-raised-button color="primary" class="my-btn" >Sub Stations </a><mat-icon class="link-icon">chevron_right</mat-icon>
+          </div>
+          <div class="my-link">
+          <a routerLink = "/streetlight" routerLinkActive="active-link" mat-raised-button color="primary" class="my-btn" >Street Lights </a><mat-icon class="link-icon">chevron_right</mat-icon>
+          </div>
         </div>
         
         <div class="log-out">

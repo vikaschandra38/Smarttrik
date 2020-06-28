@@ -59,6 +59,7 @@ export class LayoutComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+    this.isOpened = false;
   }
 
 
@@ -80,4 +81,14 @@ export class LayoutComponent implements OnDestroy {
     this.authenticationService.logout();
     this.router.navigate(['/login']);
   }
+
+
+
+
+
+
+
+
+
+
 }

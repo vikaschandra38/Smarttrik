@@ -6,6 +6,7 @@ import { StreetlightUser1Component } from './components/streetlight-user1/street
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { AuthTtdGuard } from './helpers/auth-ttd.guard';
 import { RedirectGuardService } from './helpers/redirect-guard.service';
+import { AccountComponent } from './components/account/account.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,13 @@ const routes: Routes = [
         component: StreetlightUser1Component,
         canActivate: [AuthTtdGuard],
         runGuardsAndResolvers: 'always',
-     
+      }
+      ,
+      {
+        path: 'account',
+        component: AccountComponent,
+        canActivate: [AuthTtdGuard],
+        runGuardsAndResolvers: 'always',
       }
     ]
   },

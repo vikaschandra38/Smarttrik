@@ -6,14 +6,82 @@
     bottom: 0;
     left: 0;
     right: 0;
+
+  }
+  .my-link
+  {
+    display: flex;
+    background-color: #3f51b5;
+    align-items: center;
+    margin-bottom:7px;
+    border-radius: 4px;
+  }
+  .my-link a{
+    flex: 1;
+  }
+  .link-icon
+  {
+color:#fff;
+font-size: 25px;
   }
   .menu-icon
   {
-    font-size: 40px;
-    height: 40px;
+    font-size: 35px;
+    height: 35px;
     width: 40px;
      color: #3f51b5;
     line-height:initial!important;
+  }
+  .menu-iconn
+  {
+    font-size: 32px;
+  }
+  .search-icon
+  {
+    font-size: 22px;
+    height: 22px;
+    width: 22px;
+     color: #3f51b5;
+    line-height:initial!important;
+  }
+  .search-box input
+  {
+    outline: none;
+    border: none;
+    width: 250px;
+    background-color: transparent;
+    border-bottom: 2px solid #3f51b5;
+  }
+  .search-box input::placeholder
+  {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    overflow: hidden;
+    transition: all .6s ease;
+  }
+  .search-box input:focus::placeholder
+  {
+    transform: translateX(-100%);
+  }
+  .menu-iconn
+  {
+    font-size: 22px;
+    height: 22px;
+    width: 22px;
+    margin-right:2px;
+  }
+  .menu-iconnn
+  {
+    font-size: 16px;
+    height: 18px;
+    width: 18px;
+    margin-right:2px;
+  }
+  .mat-list-item
+  {
+    height: 35px!important;
+    font-size: 14px;
   }
   .example-is-mobile .example-toolbar {
     position: fixed;
@@ -23,21 +91,29 @@
     display: flex;
     align-items: center;
   }
-  
+  .msg-btn
+  {
+    margin-right: 5px;
+  }
 #my-toolbar
 {
-    height: 100px;
-     background-color: #fff;
+    height: 60px;
+     background: #83a4d4;
+     background: -webkit-gradient(linear, left , right, from(#fff), to(#b0d0ff));
+     background: linear-gradient(to right, #fff, #d3e5ff);
 }
 .my-scrollbar
 {
-  border-top: 1px solid #e4e8fa;
+
+  -webkit-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
 }
   h1.example-app-name {
     margin-left: 16px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
-    font-size: 29px;
+    font-size: 18px;
   }
   
   .example-sidenav-container {
@@ -57,15 +133,17 @@
     width:250px!important;
     padding: 0px 10px;
     border:none;
-    box-sizing: content-box;
-   border-right:1px solid #e4e8fa;
+    box-sizing: border-box;
+    background: #83a4d4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #fff, #b0d0ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #fff, #b0d0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   .mat-drawer-container
   {
-    
     background-color: #fff;
   }
 
+  
   .user-pf
   {
     display: flex;
@@ -77,6 +155,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
+    
   }
   .user-profile .profile-img
   {
@@ -86,10 +166,16 @@
     background-position: center center;
     background-size: 100px 100px;
     background-repeat: no-repeat;
+    margin-top: 10px;
+    border-radius: 50%;
+  }
+  .user-profile p
+  {
+    margin: 12px 0px;
   }
   .my-text
   {
-    font-size: 20px;
+    font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     color: #3f51b5;
@@ -97,15 +183,18 @@
 
   .my-btn
   {
-padding:7px 0px;
-font-size:18px;
-margin-bottom:10px;
+padding:0px 0px;
+font-size:14px;
   }
  
+  .log-out
+  {
+    margin-bottom: 7px;
+    font-size:14px;
+  }
   .log-out .my-btn
   {
     width:100%;
-  
   }
   .main-con
   {
@@ -117,23 +206,43 @@ margin-bottom:10px;
   .logout-icon
   {
     margin-right:10px;
-    font-size:22px;
+    font-size:18px;
     margin-bottom:2px;
   }
   .logo-img
   {
-    width:400px;
-    height:80%;
+    width:350px;
+    height:100%;
     margin:0 auto;
     background-image: url(../../assets/images/ttd-logoo.png);
     background-position: center center;
-    background-size: 100% 100%;
+    background-size: 75% 85%;
     background-repeat: no-repeat;
   }
 
   .top-menu
   {
-    font-size: 18px!important;
+    font-size: 14px!important;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
+    height: 35px;
+    line-height: 35px;
   }
+  .top-menu mat-icon
+  {
+    font-size: 18px;
+    height: 20px;
+    width: 16px;
+  }
+
+  .active-link + mat-icon.link-icon
+  {
+    color: #ff4081!important;
+  }
+
+
+ .search-box
+ {
+   margin-right: 15px;
+   display: flex;
+ }
